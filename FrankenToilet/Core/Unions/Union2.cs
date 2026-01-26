@@ -19,6 +19,7 @@ public sealed class Union2<T1, T2> : IUnion
     ///     The type of the object currently stored in the union.
     /// </summary>
     public readonly UnionType2 unionType;
+
     public Union2(T1 item) => (unionType, RawObj) = (UnionType2.T1, item);
     public Union2(T2 item) => (unionType, RawObj) = (UnionType2.T2, item);
 

@@ -22,11 +22,9 @@
     <ItemGroup>
       <FilesToCopy Include="$(SourceDir)\**\*"/>
     </ItemGroup>
-    <Copy
-        SourceFiles="@(FilesToCopy)"
-        DestinationFolder="$(DestinationDir)\%(RecursiveDir)"
-        SkipUnchangedFiles="true"
-    />
+    <Copy SourceFiles="@(FilesToCopy)"
+          DestinationFolder="$(DestinationDir)\%(RecursiveDir)"
+          SkipUnchangedFiles="true"/>
     <Message Importance="high" Text="Files copied to $(DestinationDir)"/>
   </Target>
 

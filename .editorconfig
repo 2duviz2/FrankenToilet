@@ -2,7 +2,7 @@
 charset = utf-8-bom
 end_of_line = crlf
 trim_trailing_whitespace = false
-insert_final_newline = true
+insert_final_newline = false
 indent_style = space
 indent_size = 4
 tab_width = 4
@@ -71,11 +71,11 @@ dotnet_naming_symbols.private_constants_symbols.resharper_applicable_kinds = con
 dotnet_naming_symbols.private_constants_symbols.resharper_required_modifiers = any
 dotnet_naming_symbols.private_instance_fields_symbols.applicable_accessibilities = private
 dotnet_naming_symbols.private_instance_fields_symbols.applicable_kinds = field
-dotnet_naming_symbols.private_instance_fields_symbols.resharper_applicable_kinds = field,readonly_field
+dotnet_naming_symbols.private_instance_fields_symbols.resharper_applicable_kinds = field, readonly_field
 dotnet_naming_symbols.private_instance_fields_symbols.resharper_required_modifiers = instance
 dotnet_naming_symbols.private_instance_fields_symbols_1.applicable_accessibilities = private
 dotnet_naming_symbols.private_instance_fields_symbols_1.applicable_kinds = field
-dotnet_naming_symbols.private_instance_fields_symbols_1.resharper_applicable_kinds = field,readonly_field
+dotnet_naming_symbols.private_instance_fields_symbols_1.resharper_applicable_kinds = field, readonly_field
 dotnet_naming_symbols.private_instance_fields_symbols_1.resharper_required_modifiers = instance
 dotnet_naming_symbols.private_static_fields_symbols.applicable_accessibilities = private
 dotnet_naming_symbols.private_static_fields_symbols.applicable_kinds = field
@@ -84,7 +84,7 @@ dotnet_naming_symbols.private_static_fields_symbols.resharper_applicable_kinds =
 dotnet_naming_symbols.private_static_fields_symbols.resharper_required_modifiers = static
 dotnet_naming_symbols.private_static_readonly_symbols.applicable_accessibilities = private
 dotnet_naming_symbols.private_static_readonly_symbols.applicable_kinds = field
-dotnet_naming_symbols.private_static_readonly_symbols.required_modifiers = readonly,static
+dotnet_naming_symbols.private_static_readonly_symbols.required_modifiers = readonly, static
 dotnet_naming_symbols.private_static_readonly_symbols.resharper_applicable_kinds = readonly_field
 dotnet_naming_symbols.private_static_readonly_symbols.resharper_required_modifiers = static
 dotnet_naming_symbols.unity_serialized_field_symbols.applicable_accessibilities = *
@@ -199,6 +199,6 @@ resharper_web_config_type_not_resolved_highlighting = warning
 resharper_web_config_wrong_module_highlighting = warning
 resharper_xaml_dynamic_resource_error_highlighting = warning
 
-[{*.{ant,androidproj,appxmanifest,axml,cscfg,csdef,ccproj,csproj,disco,dotsettings,filelayout,fxml,jhm,jnlp,jrxml,manifest,myapp,nuspec,rng,stylecop,svcmap,tld,wadcfgx,webref,wsdl,xml,xsd,xsl,xslt,xul},StyleCop.Cache}]
+[{*.{ant,androidproj,appxmanifest,axml,cscfg,csdef,ccproj,csproj,disco,dotsettings,filelayout,fxml,jhm,jnlp,jrxml,json,manifest,myapp,nuspec,rng,slnx,stylecop,svcmap,targets,tld,wadcfgx,webref,wsdl,xml,xsd,xsl,xslt,xul},StyleCop.Cache}]
 indent_size = 2
 

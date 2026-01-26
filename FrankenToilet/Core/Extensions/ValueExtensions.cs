@@ -10,6 +10,7 @@ public static class ValueExtensions
     {
         [PublicAPI]
         public T? AsNullable() => source;
+
         [PublicAPI]
         public StrongBox<T> Box() => new(source);
     }
