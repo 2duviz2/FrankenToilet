@@ -53,5 +53,5 @@
 
     <Publicize Include="Assembly-CSharp"/>
   </ItemGroup>
-  
+
 </Project>

@@ -12,6 +12,7 @@ public static class EnumerableExtensions
     {
         public TTo[] CastToArray<TTo>() => source.Cast<TTo>().ToArray();
     }
+
     extension<T>(IEnumerable<T> source) where T : class
     {
         public IEnumerable<T> WhereNotNull() => source.Where(static o => o != null);
