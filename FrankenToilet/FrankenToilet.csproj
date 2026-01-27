@@ -51,7 +51,23 @@
       <CopyLocal>false</CopyLocal>
     </Reference>
 
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(UltrakillDir)ULTRAKILL_Data/Managed/UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+      <CopyLocal>false</CopyLocal>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>$(UltrakillDir)ULTRAKILL_Data/Managed/Unity.TextMeshPro.dll</HintPath>
+      <Private>false</Private>
+      <CopyLocal>false</CopyLocal>
+    </Reference>
+	
     <Publicize Include="Assembly-CSharp"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="triggeredidiot\assets.bundle" />
+    <EmbeddedResource Include="triggeredidiot\assets.bundle" />
   </ItemGroup>
 
 </Project>
