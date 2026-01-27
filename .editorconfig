@@ -199,6 +199,6 @@ resharper_web_config_type_not_resolved_highlighting = warning
 resharper_web_config_wrong_module_highlighting = warning
 resharper_xaml_dynamic_resource_error_highlighting = warning
 
-[{*.{ant,androidproj,appxmanifest,axml,cscfg,csdef,ccproj,csproj,disco,dotsettings,filelayout,fxml,jhm,jnlp,jrxml,json,manifest,myapp,nuspec,rng,slnx,stylecop,svcmap,targets,tld,wadcfgx,webref,wsdl,xml,xsd,xsl,xslt,xul},StyleCop.Cache}]
+[{*.{ant,androidproj,appxmanifest,axml,cscfg,csdef,ccproj,csproj,csproj.user,disco,dotsettings,filelayout,fxml,jhm,jnlp,jrxml,json,manifest,myapp,nuspec,rng,slnx,stylecop,svcmap,targets,tld,wadcfgx,webref,wsdl,xml,xsd,xsl,xslt,xul},StyleCop.Cache}]
 indent_size = 2
 
