@@ -31,6 +31,9 @@ public static class BundleLoader
     /// <summary> the budget was dropped for maurice </summary>
     public static GameObject MauriceBad;
 
+    /// <summary> Real doomah trust </summary>
+    public static GameObject DoomahReal;
+
     /// <summary> Load the asset bundle. </summary>
     public static void Load()
     {
@@ -47,6 +50,7 @@ public static class BundleLoader
         Flash = assetBundle.LoadAsset<Sprite>("assets/flash.jpeg");
         DoomahImg = assetBundle.LoadAsset<Sprite>("assets/doomah.png");
         MauriceBad = assetBundle.LoadAsset<GameObject>("assets/mauricebad.prefab");
+        DoomahReal = assetBundle.LoadAsset<GameObject>("assets/doomahreal.prefab");
     }
 
     /// <summary> Grabs the embedded asset bundle. </summary>
