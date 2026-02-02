@@ -14,7 +14,7 @@ public static class BundleLoader
     public static AssetBundle assetBundle;
 
     /// <summary> Amercia. </summary>
-    public static VideoPlayer Amercia;
+    public static VideoClip Amercia;
 
     /// <summary> Comic sands. </summary>
     public static TMP_FontAsset ComicSands;
@@ -33,7 +33,7 @@ public static class BundleLoader
     {
         GrabEmbeddedBundle();
 
-        Amercia = assetBundle.LoadAsset<VideoPlayer>("assets/amercia.mp4");
+        Amercia = assetBundle.LoadAsset<VideoClip>("assets/amercia.mp4");
         ComicSands = assetBundle.LoadAsset<TMP_FontAsset>("assets/comicsans.asset");
         ComicSandsLegacy = assetBundle.LoadAsset<Font>("assets/comicsanslegacy.ttf");
         MinosDime = assetBundle.LoadAsset<AudioClip>("assets/minos prime.wav");
