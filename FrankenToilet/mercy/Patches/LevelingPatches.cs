@@ -16,12 +16,13 @@ public static class LevelingPatches
     public static EnemyType[] strongEnemies = [
         EnemyType.BigJohnator, EnemyType.Cerberus, EnemyType.HideousMass, EnemyType.MaliciousFace, EnemyType.Mindflayer,
         EnemyType.Swordsmachine, EnemyType.Virtue, EnemyType.Turret, EnemyType.Idol, EnemyType.VeryCancerousRodent,
-        EnemyType.Gutterman, EnemyType.Guttertank, EnemyType.Sisyphus, EnemyType.Ferryman
+        EnemyType.Gutterman, EnemyType.Guttertank, EnemyType.Sisyphus, EnemyType.Ferryman, EnemyType.MirrorReaper,
+        EnemyType.Providence, EnemyType.Deathcatcher, EnemyType.Power
     ];
     public static EnemyType[] bossEnemies = [
         EnemyType.V2, EnemyType.V2Second, EnemyType.Gabriel, EnemyType.GabrielSecond, EnemyType.MinosPrime, EnemyType.Minos,
         EnemyType.Leviathan, EnemyType.SisyphusPrime, EnemyType.FleshPanopticon, EnemyType.FleshPrison, EnemyType.Minotaur,
-        EnemyType.Mandalore, EnemyType.Centaur
+        EnemyType.Mandalore, EnemyType.Centaur, EnemyType.Geryon
     ];
     // are we deadass
     [HarmonyPatch("Death", new Type[]{typeof(bool)})]
@@ -37,4 +38,5 @@ public static class LevelingPatches
             Plugin.canvas.GetComponentInChildren<LevelingSystem>().IncreaseExp(expIncrease);
         }
     }
+
 }
