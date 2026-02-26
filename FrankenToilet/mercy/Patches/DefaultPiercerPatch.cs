@@ -11,7 +11,7 @@ public class DefaultPiercerPatch
 {
     [HarmonyPatch("ExecuteHits")]
     [HarmonyPostfix]
-    public static void DefaultPiercerBuff(RevolverBeam __instance, ref RaycastHit currentHit)
+    public static void DefaultPiercerBuff(RevolverBeam __instance, ref PhysicsCastResult currentHit)
     {
         EnemyIdentifier? eid = currentHit.transform.GetComponentInParent<EnemyIdentifier>();
         if (eid != null && __instance.sourceWeapon.name == "Revolver Pierce(Clone)" && Plugin.canvas.GetComponentInChildren<DefaultPiercer>())
@@ -21,4 +21,5 @@ public class DefaultPiercerPatch
                 (float) DefaultPiercer.mult-1, false);
         }
     }
+
 }
