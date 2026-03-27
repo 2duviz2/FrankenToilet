@@ -30,9 +30,6 @@ public class Femboy
             if (SceneHelper.CurrentScene == "Level 0-1")
                 FindObject<Image>("Canvas/HurtScreen/Title Sound/Image").sprite = BundleLoader.UlraKil;
 
-            if (SceneHelper.CurrentScene == "Level 7-1")
-                FindObject<Image>("Canvas/HurtScreen/White").sprite = BundleLoader.Flash;
-
             if (SceneHelper.CurrentScene == "Level 2-1")
             {
                 Transform Room1Lighting = FindObject<Transform>("1 - New Opener/1 Nonstuff/Lighting");

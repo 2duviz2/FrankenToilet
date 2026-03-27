@@ -17,10 +17,10 @@ public class ProjectileFucker : MonoBehaviour
     /// <summary> Check if we should dupe. </summary>
     public void Update()
     {
-        if (Time.realtimeSinceStartup - time > 0.5 && !Duped)
+        if (Time.time - time > 0.5 && !Duped)
         {
             var newRot = transform.localEulerAngles - new Vector3(0f, 5f, 0f);
-            var NewObj = Object.Instantiate(BundleLoader.Projectile, transform.position, Quaternion.Euler(newRot.x, newRot.y, newRot.z));
+            var NewObj = Instantiate(BundleLoader.Projectile, transform.position, Quaternion.Euler(newRot.x, newRot.y, newRot.z));
             transform.localEulerAngles += new Vector3(0f, 5f, 0f);
 
             Setup(NewObj);
