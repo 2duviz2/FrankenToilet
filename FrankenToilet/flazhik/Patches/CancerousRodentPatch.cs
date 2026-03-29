@@ -48,12 +48,9 @@ public class CancerousRodentPatch
     }
 
     [HarmonyPrefix]
-    [HarmonyPatch(typeof(CancerousRodent), "OnDisable")]
-    public static void CancerousRodent_OnDisable_Postfix(CancerousRodent __instance)
+    [HarmonyPatch(typeof(CancerousRodent), "OnGoLimp")]
+    public static void CancerousRodent_OnGoLimp_Prefix(CancerousRodent __instance)
     {
-        if (__instance.stat == null && __instance.mach == null)
-            return;
-
         var bigSmokeDeathHelper = new GameObject
         {
             name = "BigSmokeDeathHelper"
