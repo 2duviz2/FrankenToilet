@@ -18,10 +18,4 @@ public sealed class BigSmokeDeath : MonoBehaviour
         audioSource.outputAudioMixerGroup = AudioMixerController.Instance.allGroup;
         audioSource.Play();
     }
-
-    private void Update()
-    {
-        if (!audioSource.isPlaying)
-            Destroy(gameObject);
-    }
 }
