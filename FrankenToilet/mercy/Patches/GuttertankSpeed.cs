@@ -8,6 +8,7 @@ namespace FrankenToilet.mercy.Patches;
 public static class GuttertankSpeed
 {
     public static bool active = false;
+    [MercyFeature]
     public static void Activate() => active = true;
     [HarmonyPostfix]
     [HarmonyPatch("Start")]
