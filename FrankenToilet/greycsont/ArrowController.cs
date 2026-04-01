@@ -1,40 +1,55 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using FrankenToilet.Core;
+using FrankenToilet.mercy.Features;
 
 namespace FrankenToilet.greycsont;
 
 public static class ArrowController
 {
+    public static Canvas canvas => UnityPathHelper.FindCanvas();
+    public static GameObject imgObj
+    {
+        get
+        {
+            if (field == null)
+            {
+                field = new GameObject("HammerArrowIndicator");
+                imgObj.transform.SetParent(canvas.transform, false);
+                imgObj.transform.SetAsLastSibling();
+            }
+            return field;
+        }
+        set;
+    }
+    public static AudioSource source
+    {
+        get
+        {
+            return imgObj.GetComponent<AudioSource>() ?? imgObj.AddComponent<AudioSource>();
+        }
+    }
 
     public static void GenerateImage(float timeInSeconds)
     {
         LogHelper.LogDebug($"[greycsont] truestop time: {timeInSeconds}");
 
-        var hammer = HammerTracker.lastActiveHammer;
+        var hammer = ShotgunHammerPatch.lastActiveHammer;
         if (hammer == null) return;
         if (hammer.target == null) return;
         if (hammer.hitEnemy == null) return;
 
-        var canvas = UnityPathHelper.FindCanvas();
-
         if (canvas == null) return;
 
-        var imgObj = new GameObject("HammerArrowIndicator");
-
-        imgObj.transform.SetParent(canvas.transform, false);
-
-        imgObj.transform.SetAsLastSibling();
+        imgObj = new GameObject("HammerArrowIndicator");
 
         var clip = AssetBundleController.audioCaches["sam_" + DirectionRandomizer.randomDirection];
 
         if (clip != null)
         {
-            var source = imgObj.AddComponent<AudioSource>();
-            source.clip = clip;
-            source.spatialBlend = 0f;
+            source.SetSpatialBlend(0f);
             source.volume = 1f;
-            source.Play();
+            source.PlayOneShot(clip, 1f);
         }
 
         var img = imgObj.AddComponent<Image>();
@@ -56,36 +71,5 @@ public static class ArrowController
 
         LogHelper.LogDebug($"[greycsont] created {img.name}");
 
-    }
-}
-
-
-public static class UnityPathHelper
-{
-    public static Canvas FindCanvas()
-    {
-        var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-        foreach (var root in scene.GetRootGameObjects())
-        {
-            var canvas = root.GetComponent<Canvas>();
-            if (canvas != null)
-                return canvas;
-        }
-        return null;
-    }
-}
-
-public class DestoryTimer : MonoBehaviour
-{
-    public float lifetime;
-    private float timer = 0f;
-
-    void Update()
-    {
-        timer += Time.unscaledDeltaTime;
-        if (timer >= lifetime)
-        {
-            Destroy(gameObject);
-        }
     }
 }

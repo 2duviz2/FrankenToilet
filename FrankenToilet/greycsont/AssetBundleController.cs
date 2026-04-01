@@ -26,6 +26,7 @@ public static class AssetBundleController
         arrowSprites = assetBundle.LoadAssetWithSubAssets<Sprite>("arrow");
         farInTheBlueSky = assetBundle.LoadAssetWithSubAssets<Sprite>("farinthebluesky");
         var clips = assetBundle.LoadAllAssets<AudioClip>();
+        
         foreach (var clip in clips)
             audioCaches[clip.name] = clip;
         LogHelper.LogDebug($"[greycsont] audioClip count: {audioCaches.Count}");

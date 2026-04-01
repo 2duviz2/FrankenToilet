@@ -15,7 +15,7 @@ public static class DirectionRandomizer
     {
         Vector3 resultDir;
 
-        var camT = MonoSingleton<CameraController>.Instance.transform;
+        var camT = MonoSingleton<CameraController>.Instance?.transform;
 
         switch ((Direction)randomDirection)
         {
@@ -62,10 +62,3 @@ public static class DirectionRandomizer
 }
 
 
-public enum Direction
-{
-    Backwards = 0,
-    Left = 1,
-    Upwards = 2,
-    Right = 3
-}
