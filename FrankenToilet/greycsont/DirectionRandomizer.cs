@@ -44,11 +44,6 @@ public static class DirectionRandomizer
                 LogHelper.LogDebug("[greycsont] FUCK IENUMERATOR");
                 break;
         }
-
-        LogHelper.LogDebug($"[greycsont] Direction: {(Direction)randomDirection}");
-        LogHelper.LogDebug($"[greycsont] input: {direction.x} {direction.y} {direction.z}");
-        LogHelper.LogDebug($"[greycsont] resultDir: {resultDir.x} {resultDir.y} {resultDir.z}");
-
         return resultDir;;
     }
 

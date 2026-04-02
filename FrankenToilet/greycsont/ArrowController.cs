@@ -42,8 +42,6 @@ public static class ArrowController
 
     public static void GenerateImage(float timeInSeconds)
     {
-        LogHelper.LogDebug($"[greycsont] truestop time: {timeInSeconds}");
-
         var hammer = ShotgunHammerPatch.lastActiveHammer;
         if (hammer == null) return;
         if (hammer.target == null) return;
@@ -72,8 +70,5 @@ public static class ArrowController
         rect.localScale = new Vector3(1.3f, 1.3f, 1.3f);
 
         imgObj.AddComponent<DestoryTimer>().lifetime = timeInSeconds;
-
-        LogHelper.LogDebug($"[greycsont] created {img.name}");
-
     }
 }
