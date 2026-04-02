@@ -19,8 +19,6 @@ public static class ShotgunHammerPatch
 
     private static readonly MethodInfo random4 = AccessTools.Method(typeof(DirectionRandomizer), nameof(DirectionRandomizer.Randomize4Dir));
 
-    private static readonly MethodInfo DeliverDamage = AccessTools.Method(typeof(ShotgunHammer), nameof(ShotgunHammer.DeliverDamage));
-
     private static readonly MethodInfo TrueStop = AccessTools.Method(typeof(TimeController), nameof(TimeController.TrueStop));
 
     private static readonly MethodInfo GenerateArrowImage =

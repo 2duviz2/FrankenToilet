@@ -1,13 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using FrankenToilet.Core;
-using FrankenToilet.mercy.Features;
 
 namespace FrankenToilet.greycsont;
 
 public static class ArrowController
 {
-    public static Canvas canvas => UnityPathHelper.FindCanvas();
+    // I don't want to optimize the performance used for getter like 0.00001ms latency
+    public static Canvas canvas
+    {
+        get
+        {
+            if (field == null)
+            {
+                field = UnityPathHelper.FindCanvas();
+            }
+            return field;
+        }
+    } 
     public static GameObject imgObj
     {
         get
@@ -38,18 +48,14 @@ public static class ArrowController
         if (hammer == null) return;
         if (hammer.target == null) return;
         if (hammer.hitEnemy == null) return;
-
         if (canvas == null) return;
-
-        imgObj = new GameObject("HammerArrowIndicator");
 
         var clip = AssetBundleController.audioCaches["sam_" + DirectionRandomizer.randomDirection];
 
         if (clip != null)
         {
             source.SetSpatialBlend(0f);
-            source.volume = 1f;
-            source.PlayOneShot(clip, 1f);
+            source.PlayOneShot(clip, 1f, true);
         }
 
         var img = imgObj.AddComponent<Image>();
@@ -57,14 +63,12 @@ public static class ArrowController
         img.SetNativeSize();
 
         var color = img.color;
-        color.a = 0.7f;
+        color.a = 0.85f;
         img.color = color;
 
         var rect = imgObj.GetComponent<RectTransform>();
-        rect.anchoredPosition = Vector2.zero;
 
         rect.localEulerAngles = new Vector3(0, 0, -90f * DirectionRandomizer.randomDirection);
-
         rect.localScale = new Vector3(1.3f, 1.3f, 1.3f);
 
         imgObj.AddComponent<DestoryTimer>().lifetime = timeInSeconds;

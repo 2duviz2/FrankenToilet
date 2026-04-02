@@ -17,6 +17,8 @@ public static class DirectionRandomizer
 
         var camT = MonoSingleton<CameraController>.Instance?.transform;
 
+        var gravityDir = MonoSingleton<NewMovement>.Instance.rb.GetGravityDirection();
+
         switch ((Direction)randomDirection)
         {
             case Direction.Upwards:
@@ -29,23 +31,13 @@ public static class DirectionRandomizer
                 if (Mathf.Abs(Vector3.Dot(direction.normalized, Vector3.up)) > 0.94f)
                     resultDir = Quaternion.AngleAxis(90, camT.up) * direction;
                 else
-                {
-                    resultDir = Quaternion.AngleAxis(90, Vector3.up) * direction;
-                    resultDir.y = -resultDir.y;
-                }
+                    resultDir = RotateAndInvertHeight(90f, -gravityDir, direction);
                 break;
             case Direction.Left:
                 if (Mathf.Abs(Vector3.Dot(direction.normalized, Vector3.up)) > 0.94f)
-                {
-                    resultDir = Quaternion.AngleAxis(-90, camT.up) * direction;
-                    resultDir.y = -resultDir.y;
-                }
+                    resultDir = -camT.right;
                 else
-                {
-                    resultDir = Quaternion.AngleAxis(-90, Vector3.up) * direction;
-                    resultDir.y = -resultDir.y;
-                }
-
+                    resultDir = RotateAndInvertHeight(-90f, -gravityDir, direction);
                 break;
             default:
                 resultDir = direction;
@@ -59,6 +51,14 @@ public static class DirectionRandomizer
 
         return resultDir;;
     }
-}
 
+    private static Vector3 RotateAndInvertHeight(float angle, Vector3 axis, Vector3 dir)
+    {
+        Vector3 rotated = Quaternion.AngleAxis(angle, axis) * dir;
+        
+        Vector3 vertical = Vector3.Project(rotated, axis);
+        
+        return rotated - 2 * vertical;
+    }
+}
 
