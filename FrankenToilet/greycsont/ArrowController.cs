@@ -6,7 +6,6 @@ namespace FrankenToilet.greycsont;
 
 public static class ArrowController
 {
-    // I don't want to optimize the performance used for getter like 0.00001ms latency
     public static Canvas canvas
     {
         get
@@ -32,11 +31,16 @@ public static class ArrowController
         }
         set;
     }
+
     public static AudioSource source
     {
         get
         {
-            return imgObj.GetComponent<AudioSource>() ?? imgObj.AddComponent<AudioSource>();
+            if (field == null)
+            {
+                field = new GameObject("HammerArrowAudioSource").AddComponent<AudioSource>();
+            }
+            return field;
         }
     }
 
