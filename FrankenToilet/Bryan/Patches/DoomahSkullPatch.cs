@@ -2,9 +2,7 @@
 
 using FrankenToilet.Core;
 using HarmonyLib;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary> Turns every skull into doomah. </summary>
 [PatchOnEntry]

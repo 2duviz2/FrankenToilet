@@ -2,9 +2,7 @@
 
 using FrankenToilet.Core;
 using HarmonyLib;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary> Something Doomah this way comes, replaces something wicked with a png of doomah. </summary>
 [PatchOnEntry]

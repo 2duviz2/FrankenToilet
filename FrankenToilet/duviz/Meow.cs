@@ -182,7 +182,7 @@ public class Meow : MonoBehaviour
         var root = SceneManager.GetActiveScene().GetRootGameObjects();
         foreach (var obj in root)
         {
-            if (!obj.activeSelf && !includeActive) continue; 
+            if (!obj.activeSelf && !includeActive) continue;
             if (obj.name == "Player" || obj.name == "Canvas") continue;
             ReplaceMaterials(obj.transform, Bundle.bundle.LoadAsset<Material>("404"));
         }
@@ -318,11 +318,9 @@ public static class TMP_TextPatch
     [HarmonyPatch("Awake")]
     public static void Prefix(TextMeshProUGUI __instance)
     {
-        if (__instance && __instance.text != null)
-        {
+        if (__instance.text != null)
             if (__instance.text.ToUpper() == "4-4: CLAIR DE SOLEIL")
                 __instance.text = "404: NOT FOUND";
-        }
     }
 }
 

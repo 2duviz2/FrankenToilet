@@ -3,7 +3,6 @@
 using FrankenToilet.Core;
 using HarmonyLib;
 using TMPro;
-using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary> Patch textMeshProUGUI components (text components) to make them funky. </summary>
@@ -35,7 +34,7 @@ public static class LegacyTextPatch
     {
         __instance.font = BundleLoader.ComicSandsLegacy ?? __instance.font;
 
-        if (__instance.gameObject.GetComponent<TextFucker>() == null) 
+        if (__instance.gameObject.GetComponent<TextFucker>() == null)
             __instance.gameObject.AddComponent<TextFucker>();
     }
 }

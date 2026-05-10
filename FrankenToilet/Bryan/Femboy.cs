@@ -1,7 +1,6 @@
 ﻿namespace FrankenToilet.Bryan;
 
 using FrankenToilet.Core;
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -24,15 +23,12 @@ public class Femboy
         SceneManager.sceneLoaded += (_, _) =>
         {
             fuckText = Random.Range(0, 4) == 0;
-            
+
             if (SceneHelper.CurrentScene == "Main Menu")
                 FindObject<Image>("Canvas/Main Menu (1)/LeftSide/Title").sprite = BundleLoader.ulakill;
 
             if (SceneHelper.CurrentScene == "Level 0-1")
                 FindObject<Image>("Canvas/HurtScreen/Title Sound/Image").sprite = BundleLoader.UlraKil;
-
-            if (SceneHelper.CurrentScene == "Level 7-1")
-                FindObject<Image>("Canvas/HurtScreen/White").sprite = BundleLoader.Flash;
 
             if (SceneHelper.CurrentScene == "Level 2-1")
             {

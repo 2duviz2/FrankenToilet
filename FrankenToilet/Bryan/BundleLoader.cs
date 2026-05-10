@@ -14,8 +14,8 @@ public static class BundleLoader
     /// <summary> Spooky scary asset bundle oooooo </summary>
     public static AssetBundle assetBundle;
 
-    /// <summary> videos </summary>
-    public static VideoClip Amercia, SantaClaus, Ultrakill;
+    /// <summary> amercia </summary>
+    public static VideoClip Amercia;
 
     /// <summary> Comic sands. </summary>
     public static TMP_FontAsset ComicSands;
@@ -23,11 +23,8 @@ public static class BundleLoader
     /// <summary> Comic sands. </summary>
     public static Font ComicSandsLegacy;
 
-    /// <summary> Lakull. </summary>
-    public static AudioClip MinosDime;
-
     /// <summary> silly </summary>
-    public static Sprite UlraKil, ulakill, Flash, DoomahImg, Trans;
+    public static Sprite UlraKil, ulakill, DoomahImg, Trans;
 
     /// <summary> the budget was dropped for maurice </summary>
     public static GameObject MauriceBad;
@@ -48,16 +45,12 @@ public static class BundleLoader
     public static void Load()
     {
         GrabEmbeddedBundle();
-        
+
         Amercia = assetBundle.LoadAsset<VideoClip>("assets/amercia.mp4");
-        SantaClaus = assetBundle.LoadAsset<VideoClip>("assets/santaclaus.mp4");
-        Ultrakill = assetBundle.LoadAsset<VideoClip>("assets/ultrakill.mp4");
         ComicSands = assetBundle.LoadAsset<TMP_FontAsset>("assets/comicsans.asset");
         ComicSandsLegacy = assetBundle.LoadAsset<Font>("assets/comicsanslegacy.ttf");
-        MinosDime = assetBundle.LoadAsset<AudioClip>("assets/minos prime.wav");
         UlraKil = assetBundle.LoadAsset<Sprite>("assets/ultrakill wingdings.png");
         ulakill = assetBundle.LoadAsset<Sprite>("assets/title.png");
-        Flash = assetBundle.LoadAsset<Sprite>("assets/flash.jpeg");
         DoomahImg = assetBundle.LoadAsset<Sprite>("assets/doomah.png");
         Trans = assetBundle.LoadAsset<Sprite>("assets/trans.png");
         MauriceBad = assetBundle.LoadAsset<GameObject>("assets/mauricebad.prefab");
@@ -87,7 +80,7 @@ public static class BundleLoader
         LogHelper.LogInfo(string.Join(", ", assetBundle.GetAllAssetNames()));
 
     /// <summary> Grabs all the paths to all embedded assets and logs it. </summary>
-    public static void GrabEmbeddedAssetPaths() => 
+    public static void GrabEmbeddedAssetPaths() =>
         LogHelper.LogInfo($"Embedded Assets: {string.Join(", ", Assembly.GetExecutingAssembly().GetManifestResourceNames())}");
 
     #endregion
